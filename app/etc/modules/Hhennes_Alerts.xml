@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *  Xml Module Configuration
+ *
+ * @file : Hhennes_Alerts.xml
+ * @author : Europe-Internet <dev@europe-internet.net>
+ * @package : Magento_dev - Magento_dev
+ * @version : 0.1 - 23 juin 2015 13:13:33
+ * Last Modification : $Revision$ - $Date$
+ * Id : $Id$
+ */
+-->
+<config>
+    <modules>
+        <Hhennes_Alerts>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Hhennes_Alerts>
+    </modules>
+</config>

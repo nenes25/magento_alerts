@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<config>
+ 
+ <!-- Configuration de base du Module -->
+    <modules>
+        <Hhennes_Alerts>
+            <version>0.1.0</version>    
+        </Hhennes_Alerts>
+    </modules>
+ 
+ <!-- Configuration globale -->
+    <global>
+        
+        <models>
+            <hhennes_alerts>
+                <class>Hhennes_Alerts_Model</class>
+                <resourceModel>hhennesalerts_mysql4</resourceModel>
+            </hhennes_alerts>
+            <hhennesalerts_mysql4>
+                <class>Hhennes_Alerts_Model_Mysql4</class>
+                <entities>
+                    <alert>
+                        <table>hhennes_alert</table>
+                    </alert>
+                </entities>
+            </hhennesalerts_mysql4>
+        </models>
+        
+        <helpers>
+            <hhennes_alerts>
+                <class>Hhennes_Alerts_Helper</class>
+            </hhennes_alerts> 
+        </helpers>
+        
+        <blocks>
+            <hhennes_alerts>
+                <class>Hhennes_Alerts_Block</class>
+            </hhennes_alerts> 
+        </blocks>
+        
+        <!-- Mise à jour de la Bdd avec l'installeur -->
+        <resources>
+            <hhennesalerts_setup>
+                <setup>
+                    <module>Hhennes_Alerts</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </hhennesalerts_setup>
+            <hhennesalerts_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </hhennesalerts_write>
+            <hhennesalerts_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </hhennesalerts_read>
+        </resources>
+        
+    </global>
+    
+    <!-- Configuration Back Office -->
+    <admin>
+        <routers>
+            <hhennes_alerts>
+                <use>admin</use>
+                <args>
+                    <module>Hhennes_Alerts</module>
+                    <frontName>etatpur_alerts</frontName>
+                </args>
+            </hhennes_alerts>
+        </routers>
+    </admin>
+    
+    <!-- Menus Back Office -->
+    <adminhtml>
+        <menu>
+            <report>
+                <children>
+                    <hhennes_alerts translate="title" module="hhennes_alerts">
+                        <title>Alertes</title>
+                        <sort_order>80</sort_order>
+                        <action>etatpur_alerts/adminhtml_alert</action>  
+                    </hhennes_alerts>
+                </children>
+            </report>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <report>
+                            <children>
+                                <hhennes_alerts translate="title" module="hhennes_alerts">
+                                    <title>Alertes</title>
+                                    <sort_order>80</sort_order>
+                                    <action>hhennes_alerts/adminhtml_alert</action>  
+                                </hhennes_alerts>
+                            </children>
+                        </report>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <!-- Layout d'affichage -->
+        <layout>
+            <updates>
+                <hhennes_alerts>
+                    <file>hhennes_alerts.xml</file>
+                </hhennes_alerts>
+            </updates>
+        </layout>
+        <!-- Traduction du module -->
+        <translate>
+            <modules>
+                <Hhennes_Alerts>
+                    <files>
+                        <default>Hhennes_Alerts.csv</default>
+                    </files>
+                </Hhennes_Alerts>
+            </modules>
+        </translate>
+    </adminhtml>    
+  
+    <!-- Tâches cron -->
+    <crontab>
+        <jobs>
+            <hhennes_alerts_execute>
+                <schedule><cron_expr>* * * * *</cron_expr></schedule>
+                <run>
+                    <model>hhennes_alerts/observer::ExecuteScheduledAlerts</model>
+                </run>
+            </hhennes_alerts_execute>
+        </jobs>
+    </crontab>
+    
+</config>
