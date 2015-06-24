@@ -18,4 +18,10 @@
 "Add New Alert","Ajouter une nouvelle alerte"
 "Manage Alerts","Gestion des alertes"
 "Run alert now","Exécuter l'alerte maintenant"
-"Alert successfully executed","Alerte exécutée avec succès" 
+"Alert successfully executed","Alerte exécutée avec succès"
+### System.xml ###
+"Hhennes Alerts","Alertes Emails"
+"Alert Email Sender","Email qui envoie l'alerte"
+"If not filled,the default email of the store will be used","Si ce champ n'est pas renseigné l'email par défaut du site sera utilisée"
+"Alert Email Sender Name","Nom de l'expéditeur de l'alerte"
+"Alert Email defaut email recipient","Destinataire par défaut des alertes" 

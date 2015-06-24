@@ -1,27 +1,20 @@
 <?php
+
 abstract class Hhennes_Alerts_Model_Abstract extends Mage_Core_Model_Abstract {
-    
     /* Dossier de base des exports */
+
     const EXPORT_PATH = 'var/export/alerts/';
     const EXPORT_PATH_DIR_MANUAL = 'var/export/alerts/';
-     
-    /* Paramètres par défaut de l'email
-     * @ToDo Mettre en configuration 
-     */
-    const DEFAULT_EMAIL_SENDER = 'contact@h-hennes.fr';
-    const DEFAULT_EMAIL_SENDER_NAME = 'Alertes Automatiques';
-    const EMAIL_ADDRESS_DEV_TEAM = 'contact@h-hennes.fr';
-       
+
     /**
      * Si le dossier de destination n'existe pas on le créée
      * @param type $dir 
      */
     protected function _checkExportDir($dir) {
-        
-        if ( !is_dir(self::EXPORT_PATH.$dir) ) {
-            mkdir(self::EXPORT_PATH.$dir,0777);
+
+        if (!is_dir(self::EXPORT_PATH . $dir)) {
+            mkdir(self::EXPORT_PATH . $dir, 0777);
         }
-        
     }
 
     /**
@@ -37,33 +30,41 @@ abstract class Hhennes_Alerts_Model_Abstract extends Mage_Core_Model_Abstract {
         if ($params['recipient']) {
             $recipient = $params['recipient'];
         } else {
-            $recipient = self::EMAIL_ADDRESS_DEV_TEAM;
+            $recipient = Mage::getStoreConfig('system/hhennes_alerts/alert_email_default_recipient');
         }
 
         //Gestion des destinataires multiples :
-        if ( preg_match('#;#',$recipient)) {
-            $recipents = explode(';',$recipient);
+        if (preg_match('#;#', $recipient)) {
+            $recipents = explode(';', $recipient);
         }
-        
+
+        //Gestion de l'expéditeur et de son nom
+        if (Mage::getStoreConfig('system/hhennes_alerts/alert_email_sender') && Mage::getStoreConfig('system/hhennes_alerts/alert_email_sender') != '')
+            $senderEmail = Mage::getStoreConfig('system/hhennes_alerts/alert_email_sender');
+        else
+            $senderEmail = Mage::getStoreConfig('trans_email/ident_general/email');
+
+        if (Mage::getStoreConfig('system/hhennes_alerts/alert_email_sender_name') && Mage::getStoreConfig('system/hhennes_alerts/alert_email_sender_name') != '')
+            $senderName = Mage::getStoreConfig('system/hhennes_alerts/alert_email_sender_name');
+        else
+            $senderName = Mage::getStoreConfig('trans_email/ident_general/name');
+
         $mail = new Zend_Mail('UTF-8');
-        $mail->setFrom(self::DEFAULT_EMAIL_SENDER, self::DEFAULT_EMAIL_SENDER_NAME);
-             
+        $mail->setFrom($senderEmail, $senderName);
+
         //Si destinataires multiples
-        
-        if ( $recipents ) {
-            foreach($recipents as $emailCopy) {
+        if ($recipents) {
+            foreach ($recipents as $emailCopy) {
                 $mail->addTo($emailCopy);
             }
-        }
-        else {
+        } else {
             $mail->addTo($recipient);
         }
-        
+
         $mail->setSubject($params['subject'])
-             ->setBodyHtml($params['message']);
+                ->setBodyHtml($params['message']);
 
         //Si il y'a une pièce jointe
-        
         if ($params['attachment']) {
 
             $attachement = new Zend_Mime_Part(file_get_contents($params['attachment']));
@@ -77,5 +78,5 @@ abstract class Hhennes_Alerts_Model_Abstract extends Mage_Core_Model_Abstract {
         //Envoi de l'email
         $mail->send();
     }
-    
+
 }

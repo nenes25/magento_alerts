@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <system>
+            <groups>
+                <hhennes_alerts translate="label,comment" module="hhennes_alerts">
+                    <label>Hhennes Alerts</label>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <alert_email_sender>
+                            <label>Alert Email Sender</label>
+                            <comment>If not filled,the default email of the store will be used</comment>
+                            <fontend_type>text</fontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </alert_email_sender>
+                        <alert_email_sender_name>
+                            <label>Alert Email Sender Name</label>
+                            <fontend_type>text</fontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </alert_email_sender_name>
+                        <alert_email_default_recipient>
+                            <label>Alert Email defaut email recipient</label>
+                            <comment>If not filled,the default email of the store will be used</comment>
+                            <fontend_type>text</fontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </alert_email_default_recipient>
+                    </fields>
+                </hhennes_alerts>
+            </groups>
+        </system>
+    </sections>
+</config>
