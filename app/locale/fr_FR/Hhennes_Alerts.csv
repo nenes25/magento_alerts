@@ -1,6 +1,7 @@
 "name","Nom"
 "description","Description"
-"Date add","Date de création"
+"Date add","Date de mise à jour"
+"Last Execution","Dernière exécution"
 "Edition of the alert '%s'","Edition de l'alerte '%s'"
 "Add an Alert","Ajouter une alerte"
 "Alert detail","Détails de l'alerte"

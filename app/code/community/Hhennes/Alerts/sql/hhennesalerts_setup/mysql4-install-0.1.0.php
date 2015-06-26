@@ -1,13 +1,4 @@
 <?php
-
-/**
- * Script d'installation du module EtatPur Alerts
- *
- * @author Europe-internet <dev@europe-internet.net>
- * @version 0.1 | $Revision$
- * Last-Modified : $Date$
- * Id : $Id$
- */
 $installer = $this;
 $installer->startSetup();
 
@@ -26,9 +17,9 @@ $installer->run("CREATE TABLE IF NOT EXISTS {$this->getTable('hhennes_alert')} (
   `export_csv_attached_to_email` tinyint(1) NOT NULL,
   `cron_schedule` varchar(255) NOT NULL,
   `date_add` datetime default NULL,
+  `last_execution` datetime default NULL,
   `active` TINYINT NOT NULL DEFAULT '1',
   PRIMARY KEY  (`alert_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='EtatPur Alert Module' AUTO_INCREMENT=1");
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Hhennes Alert Module' AUTO_INCREMENT=1");
 
 $installer->endSetup();
-?>

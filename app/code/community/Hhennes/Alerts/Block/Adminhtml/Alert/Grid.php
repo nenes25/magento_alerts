@@ -54,8 +54,13 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Grid extends Mage_Adminhtml_Block_Wid
             'align' => 'left',
             'index' => 'date_add',
         ));
-
-
+        
+        $this->addColumn('last_execution', array(
+            'header' => Mage::helper('hhennes_alerts')->__('Last Execution'),
+            'align' => 'left',
+            'index' => 'last_execution',
+        ));
+        
         return parent::_prepareColumns();
     }
      

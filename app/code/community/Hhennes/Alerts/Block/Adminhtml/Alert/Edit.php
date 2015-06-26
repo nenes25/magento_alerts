@@ -26,7 +26,7 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit extends Mage_Adminhtml_Block_Wid
         //Js Spécifique du bouton de lancement de l'alerte
         $this->_formScripts[] = "
             function runAlert() {
-             window.open('".$this->getUrl('hhennes_alerts/specificalert/executeAlert/',array('alert_id' => $this->getRequest()->getParam('id')))."'); 
+             window.open('".$this->getUrl('hhennes_alerts/front/run/',array('alert_id' => $this->getRequest()->getParam('id')))."'); 
              return false;  
             }
             function duplicateAlert(){
