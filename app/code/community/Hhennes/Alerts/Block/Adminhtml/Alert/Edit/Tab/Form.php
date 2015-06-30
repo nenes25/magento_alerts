@@ -66,7 +66,7 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit_Tab_Form extends Mage_Adminhtml_
         
         $fieldset->addField('email_recipient', 'text', array(
             'label' => Mage::helper('hhennes_alerts')->__('email recipient'),
-            'class' => '',
+            'class' => 'validate-email',
             'required' => false,
             'name' => 'email_recipient',
         ));

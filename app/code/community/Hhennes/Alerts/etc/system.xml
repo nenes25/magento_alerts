@@ -14,6 +14,7 @@
                             <label>Alert Email Sender</label>
                             <comment>If not filled,the default email of the store will be used</comment>
                             <fontend_type>text</fontend_type>
+                            <validate>validate-email</validate>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -31,6 +32,7 @@
                             <label>Alert Email defaut email recipient</label>
                             <comment>If not filled,the default email of the store will be used</comment>
                             <fontend_type>text</fontend_type>
+                            <validate>validate-email</validate>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>

@@ -4,7 +4,7 @@
  <!-- Configuration de base du Module -->
     <modules>
         <Hhennes_Alerts>
-            <version>0.1.0</version>    
+            <version>0.1.1</version>    
         </Hhennes_Alerts>
     </modules>
  
@@ -82,7 +82,7 @@
             <report>
                 <children>
                     <hhennes_alerts translate="title" module="hhennes_alerts">
-                        <title>Alertes</title>
+                        <title>Alerts</title>
                         <sort_order>80</sort_order>
                         <action>etatpur_alerts/adminhtml_alert</action>  
                     </hhennes_alerts>
@@ -96,7 +96,7 @@
                         <report>
                             <children>
                                 <hhennes_alerts translate="title" module="hhennes_alerts">
-                                    <title>Alertes</title>
+                                    <title>Alerts</title>
                                     <sort_order>80</sort_order>
                                     <action>hhennes_alerts/adminhtml_alert</action>  
                                 </hhennes_alerts>
