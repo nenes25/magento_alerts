@@ -4,7 +4,7 @@
  <!-- Configuration de base du Module -->
     <modules>
         <Hhennes_Alerts>
-            <version>0.1.1</version>    
+            <version>0.1.2</version>    
         </Hhennes_Alerts>
     </modules>
  
