@@ -4,7 +4,7 @@
  <!-- Configuration de base du Module -->
     <modules>
         <Hhennes_Alerts>
-            <version>0.1.2</version>    
+            <version>0.1.3</version>    
         </Hhennes_Alerts>
     </modules>
  
@@ -66,13 +66,13 @@
     <!-- Configuration Back Office -->
     <admin>
         <routers>
-            <hhennes_alerts>
-                <use>admin</use>
+            <adminhtml>
                 <args>
-                    <module>Hhennes_Alerts</module>
-                    <frontName>etatpur_alerts</frontName>
+                    <modules>
+						<Hhennes_Alerts after="Mage_Adminhtml">Hhennes_Alerts_Adminhtml</Hhennes_Alerts>
+					</modules>
                 </args>
-            </hhennes_alerts>
+            </adminhtml>
         </routers>
     </admin>
     
@@ -84,7 +84,7 @@
                     <hhennes_alerts translate="title" module="hhennes_alerts">
                         <title>Alerts</title>
                         <sort_order>80</sort_order>
-                        <action>etatpur_alerts/adminhtml_alert</action>  
+                        <action>adminhtml/hhennesalerts_alert</action>  
                     </hhennes_alerts>
                 </children>
             </report>
@@ -98,7 +98,7 @@
                                 <hhennes_alerts translate="title" module="hhennes_alerts">
                                     <title>Alerts</title>
                                     <sort_order>80</sort_order>
-                                    <action>hhennes_alerts/adminhtml_alert</action>  
+                                    <action>adminhtml/hhennesalerts_alert</action>  
                                 </hhennes_alerts>
                             </children>
                         </report>

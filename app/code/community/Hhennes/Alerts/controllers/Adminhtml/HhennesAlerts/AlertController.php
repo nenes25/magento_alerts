@@ -1,5 +1,5 @@
 <?php
-class Hhennes_Alerts_Adminhtml_AlertController extends Mage_Adminhtml_Controller_Action {
+class Hhennes_Alerts_Adminhtml_HhennesAlerts_AlertController extends Mage_Adminhtml_Controller_Action {
 
     /**
      * Initialisation du module

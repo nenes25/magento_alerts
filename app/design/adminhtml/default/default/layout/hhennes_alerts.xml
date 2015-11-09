@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <layout>
     
-    <hhennes_alerts_adminhtml_alert_index>
+    <adminhtml_hhennesalerts_alert_index>
         <reference name="content">
             <block type="hhennes_alerts/adminhtml_alert" name="hhennes_alert"></block>
         </reference>
-    </hhennes_alerts_adminhtml_alert_index>
+    </adminhtml_hhennesalerts_alert_index>
     
 </layout>
