@@ -7,4 +7,12 @@
         </reference>
     </adminhtml_hhennesalerts_alert_index>
     
+    <adminhtml_hhennesalerts_alert_edit>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/hhennes/alerts/validations.js</name>
+            </action>
+        </reference>
+    </adminhtml_hhennesalerts_alert_edit>   
 </layout>

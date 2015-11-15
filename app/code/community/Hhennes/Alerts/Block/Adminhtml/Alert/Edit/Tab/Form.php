@@ -9,14 +9,14 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit_Tab_Form extends Mage_Adminhtml_
 
         $fieldset->addField('name', 'text', array(
             'label' => Mage::helper('hhennes_alerts')->__('name'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
             'required' => true,
             'name' => 'name',
         ));
         
         $fieldset->addField('active', 'select', array(
             'label' => Mage::helper('hhennes_alerts')->__('Alert Active'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
             'required' => true,
             'name' => 'active',
             'values' => array(
@@ -34,21 +34,22 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit_Tab_Form extends Mage_Adminhtml_
 
         $fieldset->addField('description', 'textarea', array(
             'label' => Mage::helper('hhennes_alerts')->__('description'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
             'required' => true,
             'name' => 'description',
         ));
 
         $fieldset->addField('conditions', 'textarea', array(
             'label' => Mage::helper('hhennes_alerts')->__('conditions'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
+            'class' => 'validate-hhennes-alerts-conditions',
             'required' => true,
             'name' => 'conditions',
         ));
 
         $fieldset->addField('email_to_send', 'select', array(
             'label' => Mage::helper('hhennes_alerts')->__('Send an email'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
             'required' => true,
             'name' => 'email_to_send',
             'values' => array(
@@ -66,7 +67,7 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit_Tab_Form extends Mage_Adminhtml_
         
         $fieldset->addField('email_recipient', 'text', array(
             'label' => Mage::helper('hhennes_alerts')->__('email recipient'),
-            'class' => 'validate-email',
+            'validate' => 'validate-email',
             'required' => false,
             'name' => 'email_recipient',
         ));
@@ -88,7 +89,7 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit_Tab_Form extends Mage_Adminhtml_
          
         $fieldset->addField('export_to_csv', 'select', array(
             'label' => Mage::helper('hhennes_alerts')->__('Export to csv'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
             'required' => true,
             'name' => 'export_to_csv',
             'values' => array(
@@ -120,7 +121,7 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit_Tab_Form extends Mage_Adminhtml_
           
           $fieldset->addField('export_csv_attached_to_email', 'select', array(
             'label' => Mage::helper('hhennes_alerts')->__('Attach csv to email'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
             'required' => true,
             'name' => 'export_csv_attached_to_email',
             'values' => array(
@@ -138,7 +139,8 @@ class Hhennes_Alerts_Block_Adminhtml_Alert_Edit_Tab_Form extends Mage_Adminhtml_
           
           $fieldset->addField('cron_schedule', 'text', array(
             'label' => Mage::helper('hhennes_alerts')->__('Cron Schedule'),
-            'class' => 'required-entry',
+            'validate' => 'required-entry',
+            'class' => 'validate-hhennes-alerts-cron-expr',
             'required' => true,
             'name' => 'cron_schedule',
         ));

@@ -2,3 +2,4 @@ app/code/community/Hhennes/Alerts/  app/code/community/Hhennes/Alerts/
 app/design/adminhtml/default/default/layout/hhennes_alerts.xml  app/design/adminhtml/default/default/layout/hhennes_alerts.xml
 app/etc/modules/Hhennes_Alerts.xml  app/etc/modules/Hhennes_Alerts.xml
 app/locale/fr_FR/Hhennes_Alerts.csv app/locale/fr_FR/Hhennes_Alerts.csv
+skin/adminhtml/default/default/js/hhennes/alerts/validations.js  skin/adminhtml/default/default/js/hhennes/alerts/validations.js

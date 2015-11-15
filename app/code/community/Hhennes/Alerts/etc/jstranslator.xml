@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jstranslator>
+    <hhennes-alerts-validate-conditions>
+        <message>Invalid conditions, you can only use SELECT commands</message>
+    </hhennes-alerts-validate-conditions>
+    <hhennes-alerts-validate-cron-schedule>
+        <message>Invalid cron expression</message>
+    </hhennes-alerts-validate-cron-schedule>
+</jstranslator>
