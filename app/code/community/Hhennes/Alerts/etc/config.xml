@@ -137,5 +137,13 @@
             </hhennes_alerts_execute>
         </jobs>
     </crontab>
+    	<!-- Tests -->
+    <phpunit>
+        <suite>
+            <modules>
+                <Hhennes_Alerts />
+            </modules>
+        </suite>
+    </phpunit>
     
 </config>
